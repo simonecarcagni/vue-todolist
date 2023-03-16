@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="app">
+        <header class="h-container">
+            <h1 class="title">
+                <img src="./img/logo.svg" alt="Logo Boolean">
+            </h1>
+
+            <div class="type-form">
+                <input type="text" placeholder="Inserisci una Task...">
+                <button>Aggiungi</button>
+            </div>
+            
+        </header>
+
+        <main class="m-container">
+            
+            <ul class="list-container">
+                <li v-for="task in tasks" class="list-item" >
+                    {{task.text}}
+                </li>
+            </ul>
+
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
