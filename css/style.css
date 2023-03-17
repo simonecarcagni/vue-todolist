@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html{
+    font-family: sans-serif;
+}
+
 .title img{
     height: 60px;
     margin: 20px 0px;
@@ -32,15 +36,34 @@
     width: 1140px;
     padding: 30px;
     margin: 30px auto;
-    background-color: grey;
+    background-color: lightgrey;
     border-radius: 30px;
 }
 
 .list-item{
     border-bottom: 1px solid black;
-    padding: 20px;
 }
+
 
 .list-container{
     list-style: none;
+}
+
+.done{
+    text-decoration: line-through;
+}
+
+.d-flex{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.d-flex:hover {
+    background-color: white;
+    border-radius: 30px;
+}
+
+h5 {
+    color: red;
 }

@@ -15,19 +15,29 @@
             </h1>
 
             <div class="type-form">
-                <input type="text" placeholder="Inserisci una Task...">
-                <button>Aggiungi</button>
+                <input v-model="addtask" type="text" placeholder="Inserisci una Task..." @keydown.enter="addNewTask" @keydown="">
+                <button @click="addNewTask">Aggiungi</button>
+                <h5 v-show="error">Inserisci almeno 5 caratteri!</h5>
             </div>
             
         </header>
 
         <main class="m-container">
             
-            <ul class="list-container">
-                <li v-for="task in tasks" class="list-item" >
-                    {{task.text}}
+            <ul v-if="tasks.length > 0" class="list-container">
+                <li v-for="(task, index) in tasks" class="list-item" >
+                    <div class="d-flex" @click="">
+                        <span :class="task.done?'done':''" @click="taskDone(index)">
+                            {{task.text}}
+                        </span>
+                        <span @click="deleteTask(index)">
+                            &#10006;
+                        </span>
+                    </div>
                 </li>
             </ul>
+
+            <h2 v-else>Non hai compiti da svolgere.</h2>
 
         </main>
     </div>
